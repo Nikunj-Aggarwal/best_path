@@ -25,6 +25,23 @@ public class BestPathApplication {
 		BestPathResponse bestPathResponse = deliveryRouteOptimizer.findBestPath(tripRequest);
 		System.out.println("Total Time: "+bestPathResponse.getTotalTime());
 		System.out.println("Best Path: "+bestPathResponse.getPath().toString());
+		//Expected output : R1,R2,C2,C1
+		/*
+		//Testcase 2
+		Restaurant restaurant1 = new Restaurant(new Location(0.0,1.0));
+		Restaurant restaurant2 = new Restaurant(new Location(1.0,0.0));
+		Customer customer2  = new Customer(new Location(2.0,1.0));
+		Customer customer1 = new Customer(new Location(1.0,1.0));
+
+		Orders order1 = new Orders(customer1, restaurant1, 1.0, false, false);
+		Orders order2 = new Orders(customer2, restaurant2, 2.0, false, false);
+		TripRequest tripRequest = new TripRequest(Arrays.asList(order1, order2), new Location(0.0, 0.0));
+		DeliveryRouteOptimizer deliveryRouteOptimizer = new DeliveryRouteOptimizer();
+		BestPathResponse bestPathResponse = deliveryRouteOptimizer.findBestPath(tripRequest);
+		System.out.println("Total Time: "+bestPathResponse.getTotalTime());
+		System.out.println("Best Path: "+bestPathResponse.getPath().toString());
+		//Expected output : R1,C1,R2,C2
+		 */
 
 		SpringApplication.run(BestPathApplication.class, args);
 	}

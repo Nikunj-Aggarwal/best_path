@@ -120,7 +120,6 @@ public class DeliveryRouteOptimizer {
         if (time < minMealPrepTime) {
             time += (minMealPrepTime-time); //waiting time for rider
         }
-//        currentPath.add("Restaurant " + (index + 1) + " " + orders.get(index).getRestaurant().toString());
         Result result = findOptimalPath(orders, time, false, nextPoint, currentPath, memo);
 
         return new BestPathResponse(result.time, result.path);
